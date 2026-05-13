@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: voice-agent
+data:
+  LIVEKIT_URL: "ws://livekit.voice-agent.svc.cluster.local:7880"
+  REDIS_URL: "redis://redis.voice-agent.svc.cluster.local:6379/0"
+  QDRANT_URL: "http://qdrant.voice-agent.svc.cluster.local:6333"
+  QDRANT_COLLECTION: "voice_agent_docs"
+  ENVIRONMENT: "production"
+  LOG_LEVEL: "INFO"
+  RAG_ENABLED: "true"
+  STT_PROVIDER: "deepgram"
+  LLM_PROVIDER: "openai"
+  TTS_PROVIDER: "cartesia"
+  VAD_PROVIDER: "silero"
+  OPENAI_MODEL: "gpt-4o-mini"
+  DEEPGRAM_MODEL: "nova-3"
+  CARTESIA_MODEL: "sonic-english"
+  EMBEDDING_MODEL: "BAAI/bge-small-en-v1.5"
+  EMBEDDING_DIM: "384"
+  RAG_TOP_K: "5"
+  RAG_SCORE_THRESHOLD: "0.5"
+  RAG_CHUNK_SIZE: "512"
+  RAG_CHUNK_OVERLAP: "64"
+  RAG_MAX_CONTEXT_TOKENS: "3000"
+  MIN_ENDPOINTING_DELAY: "0.5"
+  ALLOW_INTERRUPTIONS: "true"
+  INTERRUPT_MIN_WORDS: "3"
+  MAX_CONVERSATION_TURNS: "200"
+  CORS_ORIGINS: '["https://your-domain.com"]'
